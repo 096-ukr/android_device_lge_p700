@@ -28,6 +28,14 @@ on boot
     write /proc/sys/vm/page-cluster 0
     write /proc/sys/vm/swappiness 60
 
+#FM
+service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
+    class late_start
+    user root
+    group system qcom_oncrpc
+    disabled
+    oneshot
+	
 ## chargermode will crash badly unless USB is configured
 on property:init.svc.charger=running
     write /sys/devices/platform/i2c-gpio.5/i2c-5/5-0038/backlight/lm3530-bl/brightness 120

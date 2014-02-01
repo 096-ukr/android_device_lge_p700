@@ -28,7 +28,7 @@ PRODUCT_COPY_FILES += \
 # Misc
 PRODUCT_PACKAGES += \
     libnetcmdiface
-
+	
 # LibWebCore
 PRODUCT_PACKAGES += \
     libwebcore
@@ -44,3 +44,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.debuggable=1 \
     persist.service.adb.enable=1
 
+#FM
+PRODUCT_PACKAGES += \
+	Camera \
+    FM2 \
+    libqcomfm_jni \
+    qcom.fmradio
